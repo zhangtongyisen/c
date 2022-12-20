@@ -1,87 +1,83 @@
-/*
- * ³ÌĞòÃû£ºseqsearch.c£¬´Ë³ÌĞòÑİÊ¾Ë³Ğò²éÕÒ¡£
- * ×÷Õß£ºCÓïÑÔ¼¼ÊõÍø(www.freecplus.net) ÈÕÆÚ£º20210325
-*/
 #include <stdio.h>
 #include <string.h>
 
-// ¶ÔÎŞĞòµÄ²éÕÒ±í½øĞĞË³Ğò²éÕÒ¡£
-// ÔÚsstableÖĞ²éÕÒkey£¬Ê§°Ü·µ»Ø-1£¬³É¹¦·µ»ØkeyÔÚsstableÖĞµÄÊı×éÏÂ±ê¡£
+// å¯¹æ— åºçš„æŸ¥æ‰¾è¡¨è¿›è¡Œé¡ºåºæŸ¥æ‰¾ã€‚
+// åœ¨sstableä¸­æŸ¥æ‰¾keyï¼Œå¤±è´¥è¿”å›-1ï¼ŒæˆåŠŸè¿”å›keyåœ¨sstableä¸­çš„æ•°ç»„ä¸‹æ ‡ã€‚
 int Seq_Search1(int *sstable,unsigned int len,int key)
 {
   int ii;
 
-  for (ii=0;ii<len;ii++)  // ´ÓÇ°Íùºó»ò´ÓºóÍùÇ°ÕÒ¶¼ĞĞ¡£
-    if (sstable[ii]==key) break;  // ÕÒµ½ÁË¾Íbreak
+  for (ii=0;ii<len;ii++)  // ä»å‰å¾€åæˆ–ä»åå¾€å‰æ‰¾éƒ½è¡Œã€‚
+    if (sstable[ii]==key) break;  // æ‰¾åˆ°äº†å°±break
 
-  if (ii==len) return -1;  // ²éÕÒÊ§°ÜÊ±£¬ii==len
+  if (ii==len) return -1;  // æŸ¥æ‰¾å¤±è´¥æ—¶ï¼Œii==len
 
   return ii;
 }
 
 /*
-// ¶ÔÎŞĞòµÄ²éÕÒ±í½øĞĞË³Ğò²éÕÒ¸ü¾«¼òµÄĞ´·¨¡£
-// ÔÚsstableÖĞ²éÕÒkey£¬Ê§°Ü·µ»Ø-1£¬³É¹¦·µ»ØkeyÔÚsstableÖĞµÄÊı×éÏÂ±ê¡£
+// å¯¹æ— åºçš„æŸ¥æ‰¾è¡¨è¿›è¡Œé¡ºåºæŸ¥æ‰¾æ›´ç²¾ç®€çš„å†™æ³•ã€‚
+// åœ¨sstableä¸­æŸ¥æ‰¾keyï¼Œå¤±è´¥è¿”å›-1ï¼ŒæˆåŠŸè¿”å›keyåœ¨sstableä¸­çš„æ•°ç»„ä¸‹æ ‡ã€‚
 int Seq_Search1(int *sstable,unsigned int len,int key)
 {
   int ii;
 
-  for (ii=0;ii<len&&sstable[ii]!=key;ii++)  // ´ÓÇ°Íùºó»ò´ÓºóÍùÇ°ÕÒ¶¼ĞĞ¡£
+  for (ii=0;ii<len&&sstable[ii]!=key;ii++)  // ä»å‰å¾€åæˆ–ä»åå¾€å‰æ‰¾éƒ½è¡Œã€‚
     ;
 
   return ii==len?-1:ii; 
 }
 */
 
-// ÉèÖÃÉÚ±ø¶ÔÎŞĞòµÄ²éÕÒ±í½øĞĞË³Ğò²éÕÒ¡£
-// ÔÚsstableÖĞ²éÕÒkey£¬Ê§°Ü·µ»Ø0£¬³É¹¦·µ»ØkeyÔÚsstableÖĞµÄÊı×éÏÂ±ê¡£
+// è®¾ç½®å“¨å…µå¯¹æ— åºçš„æŸ¥æ‰¾è¡¨è¿›è¡Œé¡ºåºæŸ¥æ‰¾ã€‚
+// åœ¨sstableä¸­æŸ¥æ‰¾keyï¼Œå¤±è´¥è¿”å›0ï¼ŒæˆåŠŸè¿”å›keyåœ¨sstableä¸­çš„æ•°ç»„ä¸‹æ ‡ã€‚
 int Seq_Search2(int *sstable,unsigned int len,int key)
 {
   int ii;
 
-  sstable[0]=key;  // ÉÚ±ø¡£
+  sstable[0]=key;  // å“¨å…µã€‚
 
-  for (ii=len-1;sstable[ii]!=key;ii--)  // ´ÓºóÍùÇ°ÕÒ¡£
-    ;                                   // ×¢ÒâÕâ¸ö¿ÕÓï¾ä¡£
+  for (ii=len-1;sstable[ii]!=key;ii--)  // ä»åå¾€å‰æ‰¾ã€‚
+    ;                                   // æ³¨æ„è¿™ä¸ªç©ºè¯­å¥ã€‚
 
-  return ii;  // ÕÒ²»µ½Ê±£¬iiÎª0
+  return ii;  // æ‰¾ä¸åˆ°æ—¶ï¼Œiiä¸º0
 }
 
-// ¶ÔÓĞĞòµÄ²éÕÒ±í½øĞĞË³Ğò²éÕÒ¡£
-// ÔÚsstableÖĞ²éÕÒkey£¬Ê§°Ü·µ»Ø-1£¬³É¹¦·µ»ØkeyÔÚsstableÖĞµÄÊı×éÏÂ±ê¡£
+// å¯¹æœ‰åºçš„æŸ¥æ‰¾è¡¨è¿›è¡Œé¡ºåºæŸ¥æ‰¾ã€‚
+// åœ¨sstableä¸­æŸ¥æ‰¾keyï¼Œå¤±è´¥è¿”å›-1ï¼ŒæˆåŠŸè¿”å›keyåœ¨sstableä¸­çš„æ•°ç»„ä¸‹æ ‡ã€‚
 int Seq_Search3(int *sstable,unsigned int len,int key)
 {
   int ii;
 
-  for (ii=0;ii<len;ii++)  // ´ÓÇ°Íùºó»ò´ÓºóÍùÇ°ÕÒ¶¼ĞĞ¡£
+  for (ii=0;ii<len;ii++)  // ä»å‰å¾€åæˆ–ä»åå¾€å‰æ‰¾éƒ½è¡Œã€‚
   {
-    if (sstable[ii]==key) break;  // ÕÒµ½ÁË¾Íbreak
-    if (sstable[ii] >key) return -1; // ²»±ØÔÙÕÒÁË£¬·µ»Ø-1
+    if (sstable[ii]==key) break;  // æ‰¾åˆ°äº†å°±break
+    if (sstable[ii] >key) return -1; // ä¸å¿…å†æ‰¾äº†ï¼Œè¿”å›-1
   }
 
-  if (ii==len) return -1;  // ²éÕÒÊ§°ÜÊ±£¬ii==len
+  if (ii==len) return -1;  // æŸ¥æ‰¾å¤±è´¥æ—¶ï¼Œii==len
 
   return ii;
 }
 
-// ²ÉÓÃÌøÔ¾µÄ·½·¨¶ÔÓĞĞòµÄ²éÕÒ±í½øĞĞË³Ğò²éÕÒ¡£
-// ÔÚsstableÖĞ²éÕÒkey£¬Ê§°Ü·µ»Ø-1£¬³É¹¦·µ»ØkeyÔÚsstableÖĞµÄÊı×éÏÂ±ê¡£
+// é‡‡ç”¨è·³è·ƒçš„æ–¹æ³•å¯¹æœ‰åºçš„æŸ¥æ‰¾è¡¨è¿›è¡Œé¡ºåºæŸ¥æ‰¾ã€‚
+// åœ¨sstableä¸­æŸ¥æ‰¾keyï¼Œå¤±è´¥è¿”å›-1ï¼ŒæˆåŠŸè¿”å›keyåœ¨sstableä¸­çš„æ•°ç»„ä¸‹æ ‡ã€‚
 int Seq_Search4(int *sstable,unsigned int len,int key)
 {
   int ii=0;
 
-  while (ii<len && sstable[ii]<key) ii=ii+3;  // Ã¿´ÎÌøÔ¾Èı¸öÔªËØ¡£
+  while (ii<len && sstable[ii]<key) ii=ii+3;  // æ¯æ¬¡è·³è·ƒä¸‰ä¸ªå…ƒç´ ã€‚
 
-  if (ii<len && sstable[ii]==key) return ii;  // ²éÕÒ³É¹¦¡£ 
-  else if (ii-1<len && sstable[ii-1]==key) return ii-1;  // ²éÕÒ³É¹¦¡£
-  else if (ii-2<len && sstable[ii-2]==key) return ii-2;  // ²éÕÒ³É¹¦¡£
+  if (ii<len && sstable[ii]==key) return ii;  // æŸ¥æ‰¾æˆåŠŸã€‚ 
+  else if (ii-1<len && sstable[ii-1]==key) return ii-1;  // æŸ¥æ‰¾æˆåŠŸã€‚
+  else if (ii-2<len && sstable[ii-2]==key) return ii-2;  // æŸ¥æ‰¾æˆåŠŸã€‚
 
-  return -1;  // ²éÕÒÊ§°Ü¡£
+  return -1;  // æŸ¥æ‰¾å¤±è´¥ã€‚
 }
 
 int main()
 {
-  // ¶ÔÎŞĞòµÄ²éÕÒ±í½øĞĞË³Ğò²éÕÒ¡£
+  // å¯¹æ— åºçš„æŸ¥æ‰¾è¡¨è¿›è¡Œé¡ºåºæŸ¥æ‰¾ã€‚
   int sstable1[]={2,5,6,3,1,7,4,8,9};
   int len=sizeof(sstable1)/sizeof(int);
 
@@ -91,7 +87,7 @@ int main()
   printf("result1=%d\n",Seq_Search1(sstable1,len,9));
   printf("\n");
 
-  // ÉèÖÃÉÚ±ø¶ÔÎŞĞòµÄ²éÕÒ±í½øĞĞË³Ğò²éÕÒ¡£
+  // è®¾ç½®å“¨å…µå¯¹æ— åºçš„æŸ¥æ‰¾è¡¨è¿›è¡Œé¡ºåºæŸ¥æ‰¾ã€‚
   int sstable2[]={0,2,5,6,3,1,7,4,8,9};
   len=sizeof(sstable2)/sizeof(int);
 
@@ -101,7 +97,7 @@ int main()
   printf("result2=%d\n",Seq_Search2(sstable2,len,9));
   printf("\n");
 
-  // ¶ÔÓĞĞòµÄ²éÕÒ±í½øĞĞË³Ğò²éÕÒ¡£
+  // å¯¹æœ‰åºçš„æŸ¥æ‰¾è¡¨è¿›è¡Œé¡ºåºæŸ¥æ‰¾ã€‚
   int sstable3[]={1,2,3,4,5,6,7,8,9};
   len=sizeof(sstable3)/sizeof(int);
 
@@ -111,7 +107,7 @@ int main()
   printf("result3=%d\n",Seq_Search3(sstable3,len,9));
   printf("\n");
 
-  // ²ÉÓÃÌøÔ¾µÄ·½·¨¶ÔÓĞĞòµÄ²éÕÒ±í½øĞĞË³Ğò²éÕÒ¡£
+  // é‡‡ç”¨è·³è·ƒçš„æ–¹æ³•å¯¹æœ‰åºçš„æŸ¥æ‰¾è¡¨è¿›è¡Œé¡ºåºæŸ¥æ‰¾ã€‚
   int sstable4[]={1,2,3,4,5,6,7,8,9};
   len=sizeof(sstable4)/sizeof(int);
 
