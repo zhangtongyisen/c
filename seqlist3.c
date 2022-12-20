@@ -1,7 +1,3 @@
-/*
- * 程序名：seqlist3.c，此程序演示顺序表的动态实现，数据元素是整数。
- * 作者：C语言技术网(www.freecplus.net) 日期：20201230
-*/
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

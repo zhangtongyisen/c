@@ -1,4 +1,3 @@
-// 桶排序，作者：C语言技术网（www.freecplus.net）码农有道。
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -71,8 +70,6 @@ int main(int argc,char *argv[])
 
   // 显示排序结果。
   int ii; for (ii=0;ii<len;ii++) printf("%2d ",arr[ii]); printf("\n");
-
-  // system("pause");  // widnows下的C启用本行代码。
 
   return 0;
 }

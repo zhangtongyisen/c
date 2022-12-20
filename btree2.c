@@ -1,12 +1,7 @@
-/*
- * 程序名：btree2.c，此程序演示二叉树的前序遍历、中序遍历和后序遍历，包括递归和非递归两种方法。
- * 作者：C语言技术网(www.freecplus.net) 日期：20200202
-*/
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-///////////////////////////////////////////////
 // 二叉树的数据结构。
 typedef struct BiTNode
 {
@@ -14,10 +9,7 @@ typedef struct BiTNode
   struct BiTNode *lchild;    // 指向左子结点地址的指针。
   struct BiTNode *rchild;    // 指向右子结点地址的指针。
 }BiTNode,*BiTree;
-///////////////////////////////////////////////
 
-
-////////////////////////////////////////////////////////////////
 // 栈的数据结构。
 #define MAXSIZE 30       // 顺序栈的最大长度。
 
@@ -29,9 +21,7 @@ typedef struct
   int top;                  // 栈顶指针，从0到MAXSIZE-1，-1表示空栈。
                             // 也可以从1到MAXSIZE，0表示空栈。
 }SeqStack,*PSeqStack;
-////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////
 // 顺序栈SS的初始化操作。
 void InitStack(PSeqStack SS);                     
 
@@ -59,7 +49,6 @@ void PrintStack(PSeqStack SS);
 // 获取栈顶元素，返回值：0-失败；1-成功。
 // 只查看栈顶元素的值，元素不出栈。
 int GetTop(PSeqStack SS, ElemType *ee);
-////////////////////////////////////////////////////////////////
 
 // 求二叉树的高度。
 int TreeDepth(BiTree TT);
@@ -85,17 +74,6 @@ void PostOrder1(BiTree TT);
 int main()
 {
   BiTree TT=0; // 声明树指针变量。
-
-  /*
-  // 手工构造一个如下结构的二叉树。
-             1
-          /     \
-         2       3
-        / \     /
-       4   5   6
-      / \ / \
-     7  8 9  0
-  */
 
   // 分配根节点。
   TT=(BiTNode *)malloc(sizeof(BiTNode));

@@ -1,13 +1,6 @@
-/*
- * C语言版本。
- * 程序名：btree4.c，此程序演示二叉排序树的各种操作，包括插入、删除、查找。
- * 作者：C语言技术网(www.freecplus.net) 日期：20200202
-*/
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
-///////////////////////////////////////////////
 
 typedef int ElemType;     // 自定义数据元素为整数。
 
@@ -18,7 +11,6 @@ typedef struct BSTNode
   struct BSTNode *lchild;    // 指向左子结点地址的指针。
   struct BSTNode *rchild;    // 指向右子结点地址的指针。
 }BSTNode,*BSTree;
-///////////////////////////////////////////////
 
 // 在树TT中插入关键字为ee的新结点（递归实现），返回值：0-树中已存在关键字为ee的结点；1-成功。
 int Insert(BSTree *TT,ElemType *ee);
@@ -59,17 +51,6 @@ int main()
 
   ElemType arr[]={50,66,60,26,21,30,70,68}; 
 
-  /*
-  // 用数组arr中的序列构建二叉排序树TT。
-  // 构建的二叉排序树将如下：
-              50
-           /     \
-          26      66
-         /  \    /  \
-        21  30 60   70
-                   /
-                  68
-  */
   CreateBST(&TT,arr,sizeof(arr)/sizeof(ElemType));
 
   ElemType ee;
@@ -138,7 +119,7 @@ int TreeDepth(BSTree TT)
 // 访问结点元素。
 void visit(BSTNode *pp)
 {
-  printf("%d ",pp->data);  // 访问结点元素就是把值输出来，意思一下就行了。
+  printf("%d ",pp->data);  
 }
 
 // 在树TT中插入关键字为ee的新结点（递归实现），返回值：0-树中已存在关键字为ee的结点；1-成功。
@@ -238,7 +219,7 @@ BSTNode *Find1(BSTree TT,ElemType *ee)
   return NULL;
 
   /*
-  // 以下代码更精简，可以取代以上的代码。
+
   while ( (TT!=NULL) && (*ee!=TT->data) )
   {
     if (*ee<TT->data) TT=TT->lchild;  // 继续向左走。

@@ -1,12 +1,7 @@
-/*
- * 程序名：btree3.c，此程序演示中序线索二叉树的创建及求前驱后继的方法。
- * 作者：C语言技术网(www.freecplus.net) 日期：20200202
-*/
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-///////////////////////////////////////////////
 // 线索二叉树的数据结构。
 typedef struct TBTNode
 {
@@ -15,7 +10,6 @@ typedef struct TBTNode
   struct TBTNode *rchild;    // 指向右子结点地址的指针。
   unsigned char ltag,rtag;   // 左右指针的类型，0-非线索指针，1-线索指针。
 }TBTNode,*TBTTree;
-///////////////////////////////////////////////
 
 // 访问结点元素。
 void visit(TBTNode *pp);
@@ -33,10 +27,9 @@ void PostOrder(TBTTree TT);
 void CrtInThread(TBTTree TT);
 
 // 中序遍历线索化二叉树的递归函数，参数pp是当前节点，pre是前驱结点。
-void InThread(TBTTree pp,TBTTree *pre);  // C语言的pre参数要用指针的指针。
-// void InThread(TBTTree pp,TBTTree &pre); // C++语言的pre参数为引用，如果启用它，需要用C++的编译器编译。
+void InThread(TBTTree pp,TBTTree *pre);  
+// void InThread(TBTTree pp,TBTTree &pre); 
 
-//////////////////////////////////////////////////
 // 获取中序遍历线索二叉树的第一个结点。
 TBTNode *FirstNode(TBTTree TT);
 
@@ -45,9 +38,7 @@ TBTNode *NextNode(TBTNode *pp);
 
 // 中序线索二叉树的遍历函数。
 void InOrder1(TBTTree TT);
-//////////////////////////////////////////////////
 
-///////////////////////////////////////////////////
 // 获取中序遍历线索二叉树的最后一个结点。
 TBTNode *LastNode(TBTTree TT);
 
@@ -56,22 +47,10 @@ TBTNode *PriorNode(TBTNode *pp);
 
 // 从右到左中序线索二叉树的遍历函数。
 void InOrder2(TBTTree TT);
-//////////////////////////////////////////////////
 
 int main()
 {
   TBTTree TT=0; // 声明树指针变量。
-
-  /*
-  // 手工构造一个如下结构的二叉树。
-             1
-          /     \
-         2       3
-        / \     /
-       4   5   6
-      / \ /   /
-     7  8 9  0
-  */
 
   // 分配根节点。
   TT=(TBTNode *)malloc(sizeof(TBTNode));
@@ -133,7 +112,6 @@ int main()
   TT->rchild->lchild->rchild->lchild=TT->rchild->lchild->rchild->rchild=0;
   TT->rchild->lchild->rchild->ltag=TT->rchild->lchild->rchild->rtag=0;
 
-  //////////////////////////////////////////////////////////
   // 二叉树的先序遍历。
   printf("先序遍历结果："); PreOrder(TT); printf("\n");
 
@@ -143,7 +121,6 @@ int main()
   // 二叉树的后序遍历。
   printf("后序遍历结果："); PostOrder(TT); printf("\n");
   // 以上遍历二叉树的代码要放在线索化之前。
-  //////////////////////////////////////////////////////////
 
   // 中序遍历二叉树线索化主函数。
   CrtInThread(TT);
@@ -225,7 +202,6 @@ void InThread(TBTTree pp,TBTTree *pre)
 }
 
 /*
-// C++语言的pre参数为引用，如果启用它，需要用C++的编译器编译。
 void InThread(TBTTree pp,TBTTree &pre) 
 {
   if (pp==NULL) return;
@@ -272,7 +248,6 @@ void CrtInThread(TBTTree TT)
   printf(" 线索化完成。\n");
 }
 
-////////////////////////////////////////////////////////////////////////////
 // 获取中序遍历线索二叉树的第一个结点。
 TBTNode *FirstNode(TBTTree TT)
 {
@@ -304,7 +279,6 @@ void InOrder1(TBTTree TT)
   }
 }
 
-////////////////////////////////////////////////////////////////////////////
 // 获取中序遍历线索二叉树的最后一个结点。
 TBTNode *LastNode(TBTTree TT)
 {
@@ -335,5 +309,5 @@ void InOrder2(TBTTree TT)
     pp=PriorNode(pp);  // 指针移动到前驱结点。
   }
 }
-////////////////////////////////////////////////////////////////////////////
+
 

@@ -26,7 +26,7 @@ int main(void)
     {
         if (i == 35)
         {
-            printf(" ±‡≥Ãæ„¿÷≤ø ");
+            printf(" £°£°£° ");
             i+=12;
         }
         printf("\3");

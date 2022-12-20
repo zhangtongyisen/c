@@ -1,6 +1,5 @@
 /*
  * 程序名：seqstack2.c，此程序演示用顺序栈检查括号是否匹配，支持()[]{}三种括号。
- * 作者：C语言技术网(www.freecplus.net) 日期：20201230
 */
 #include <stdio.h>
 #include <string.h>

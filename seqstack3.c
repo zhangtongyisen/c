@@ -1,6 +1,5 @@
 /*
  * 程序名：seqstack3.c，此程序演示用顺序栈实现中缀表达式转后缀表达式。
- * 作者：C语言技术网(www.freecplus.net) 日期：20201230
 */
 #include <stdio.h>
 #include <string.h>

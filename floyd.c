@@ -1,7 +1,3 @@
-/*
- * 程序名：floyd.c，此程序演示弗洛伊德算法（floyd）。
- * 作者：C语言技术网(www.freecplus.net) 日期：20200202
-*/
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

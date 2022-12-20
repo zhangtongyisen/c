@@ -1,7 +1,3 @@
-/*
- * 程序名：seqlist2.c，此程序演示顺序表的静态实现，数据元素是结构体。
- * 作者：C语言技术网(www.freecplus.net) 日期：20201230
-*/
 #include <stdio.h>
 #include <string.h>
 
@@ -9,8 +5,8 @@
 
 typedef struct
 {
-  int  no;        // 超女编号。
-  char name[31];  // 超女姓名。
+  int  no;        // 编号。
+  char name[31];  // 姓名。
 }ElemType;        // 自定义顺序表的数据元素为结构体。
 
 typedef struct

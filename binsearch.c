@@ -1,7 +1,3 @@
-/*
- * 程序名：binsearch.c，此程序演示折半查找。
- * 作者：C语言技术网(www.freecplus.net) 日期：20210325
-*/
 #include <stdio.h>
 #include <string.h>
 

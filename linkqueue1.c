@@ -1,7 +1,3 @@
-/*
- * 程序名：linkqueue1.c，此程序演示队列的链表实现（带头结点）。
- * 作者：C语言技术网(www.freecplus.net) 日期：20201230
-*/
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

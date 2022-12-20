@@ -1,4 +1,3 @@
-// 优化后的冒泡排序，作者：C语言技术网（www.freecplus.net）码农有道。
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -74,7 +73,6 @@ int main(int argc,char *argv[])
 
   printf("\n");
 
-  // system("pause");  // widnows下的C启用本行代码。
 
   return 0;
 }

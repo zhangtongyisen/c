@@ -1,4 +1,3 @@
-// 希尔排序，作者：C语言技术网（www.freecplus.net）码农有道。
 #include <stdlib.h>
 #include <stdio.h>
 

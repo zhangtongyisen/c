@@ -1,4 +1,3 @@
-// 计数排序（基础版），作者：C语言技术网（www.freecplus.net）码农有道。
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -49,8 +48,6 @@ int main()
 
   // 显示排序结果。
   int yy; for (yy=0;yy<len;yy++) printf("%2d ",arr[yy]); printf("\n");
-
-  // system("pause");  // widnows下的C启用本行代码。
 
   return 0;
 }

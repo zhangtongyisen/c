@@ -1,7 +1,3 @@
-/*
- * 程序名：hash.c，此程序演示哈希表的实现，数据元素单链表带头结点。
- * 作者：C语言技术网(www.freecplus.net) 日期：20210401
-*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

@@ -1,7 +1,3 @@
-/*
- * 程序名：seqqueue1.c，此程序演示循环队列的数组实现，队尾指针指向队尾的下一个元素，没有length的辅助变量。
- * 作者：C语言技术网(www.freecplus.net) 日期：20201230
-*/
 #include <stdio.h>
 #include <string.h>
 

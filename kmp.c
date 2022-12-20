@@ -1,11 +1,3 @@
-/*
- * 程序名：kmp.c，此程序演示了字符串的匹配模式算法，包括：
- * 1）普通的模式匹配算法，即BF算法；
- * 2）KMP算法的求next数组；
- * 3）KMP算法的求nextval数组；
- * 4）KMP算法的实现。
- * 作者：C语言技术网(www.freecplus.net) 日期：20210125
-*/
 #include <stdio.h>
 #include <string.h>
 

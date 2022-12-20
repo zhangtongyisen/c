@@ -1,12 +1,7 @@
-/*
- * 程序名：btree1.c，此程序演示二叉树的层次遍历。
- * 作者：C语言技术网(www.freecplus.net) 日期：20200202
-*/
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-///////////////////////////////////////////////
 // 二叉树的数据结构。
 typedef struct BiTNode
 {
@@ -14,10 +9,7 @@ typedef struct BiTNode
   struct BiTNode *lchild;    // 指向左子结点地址的指针。
   struct BiTNode *rchild;    // 指向右子结点地址的指针。
 }BiTNode,*BiTree;
-///////////////////////////////////////////////
 
-
-///////////////////////////////////////////////
 // 队列的数据结构。
 #define MAXSIZE 30       // 循环队列的最大长度，最多可以存放MAXSIZE-1个元素。
 
@@ -29,9 +21,7 @@ typedef struct
   int front;                // 队列的头指针。
   int rear;                 // 队列的尾指针，指向队尾的下一个元素。
 }SeqQueue,*PSeqQueue;
-///////////////////////////////////////////////
 
-///////////////////////////////////////////////
 // 队列操作的函数。
 
 // 循环队列QQ的初始化操作。
@@ -63,17 +53,6 @@ void LevelOrder(BiTree TT);
 int main()
 {
   BiTree TT=0; // 声明树指针变量。
-
-  /*
-  // 手工构造一个如下结构的二叉树。
-             1
-          /     \
-         2       3
-        / \     /
-       4   5   6
-      / \ / \
-     7  8 9  0
-  */
 
   // 分配根节点。
   TT=(BiTNode *)malloc(sizeof(BiTNode));

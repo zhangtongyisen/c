@@ -1,7 +1,3 @@
-/*
- * 程序名：linklist1.c，此程序演示带头结点的单链表的实现，数据元素是整数。
- * 作者：C语言技术网(www.freecplus.net) 日期：20201230
-*/
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -21,11 +17,6 @@ LNode *InitList1();
 // 初始化链表，返回值：0-失败；1-成功。
 int InitList2(LinkList *LL);
 
-// C++引用的方法，在Linux下，需要用g++编译。
-// 初始化链表，返回值：0-失败；1-成功。
-// int InitList3(LinkList &LL);
-
-// 如果参数采用转指针LL的值，LL的值只能传进去，无法返回，这种方法是不行的。
 int InitList4(LinkList LL);
 
 // 销毁链表LL。
@@ -34,10 +25,6 @@ void DestroyList1(LinkList LL);
 // 销毁链表LL。
 // 传入指针的地址的方法。
 void DestroyList2(LinkList *LL);
-
-// C++引用的方法，在Linux下，需要用g++编译。
-// 传入指针的地址的方法。
-// void DestroyList3(LinkList &LL);
 
 // 清空链表。
 void ClearList(LinkList LL);                    
@@ -96,19 +83,6 @@ int main()
   LinkList LL=NULL; // 声明链表指针变量。
 
   LL=InitList1();     // 初始化链表。
-
-  // 如果要在函数中对变量进行赋值，必须把变量的地址传入函数。
-  // 指针变量简称指针，如果要在函数中对指针变量赋值，也必须把指针的地址传入函数。
-  // LL是指针，在InitList2函数中，需要把头结点的地址赋值给LL，所以要传入LL的地址。
-  // 指针是变量，用于存放变量的地址，指针不是地址，指针里存放的内容才是地址。
-  // 所以，这里要把指针变量LL的地址传给InitList2()函数。
-  // 各位菜鸡，明白鸟吗？
-  // InitList2(&LL);     // 初始化链表，传入指针变量LL的地址。
-
-  // InitList3(LL);      // 初始化链表，C++的引用。
-
-  // 如果参数采用转指针LL的值，LL的值只能传进去，无法返回，这种方法是不行的。
-  // InitList4(LL);
 
   printf("LL=%p\n",LL);
 
@@ -414,7 +388,6 @@ int  DeleteNode(LinkList LL, unsigned int ii)
     pp=pp->next; kk++;
   }
 
-  // 注意，以下行的代码与视频中的不一样，视频中的是 if ( pp==NULL )，有bug。
   if ( pp->next==NULL ) { printf("位置（%d）不合法，超过了表长。\n",ii); return 0; }
 
   LNode *tmp=pp->next;  // tmp为将要删除的结点。
@@ -674,10 +647,6 @@ int DeleteNode1(LNode *pp)
   memcpy(&pp->data,&tmp->data,sizeof(ElemType)); // 把后继结点的数据复制到pp结点中。
   pp->next=tmp->next;   // 把pp的next指向后继结点的next。
   free(tmp);  // 释放后继结点。
-
-  // 写这个函数的目的是告诉大家这种方法是有问题的。
-  // 问题：如果当前的pp结点是链表的最后一个结点，那么它的后继结点根本不存在。
-  // 结论：此法不通，还是乖乖的从链表头部开始扫描。
 
   return 1;
 }

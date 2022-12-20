@@ -1,4 +1,3 @@
-// 全省高考成绩排名算法，作者：C语言技术网（www.freecplus.net）码农有道。
 #include <stdio.h>
 
 int main() 
@@ -22,8 +21,6 @@ int main()
   printf("请输入考生的成绩：");
   scanf("%d",&itmp);
   printf("该考生全省排名是：%d\n",buckets[itmp]);
-
-  // system("pause");  // widnows下的C启用本行代码。
 
   return 0;
 }
